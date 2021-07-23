@@ -1,5 +1,6 @@
 package com.asharya.agromart.ui.register
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -9,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.asharya.agromart.databinding.ActivityRegisterBinding
 import com.asharya.agromart.repository.UserRepository
+import com.asharya.agromart.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -39,7 +41,7 @@ class RegisterActivity : AppCompatActivity() {
             if (validate()) {
                 val password = binding.etPassword.text.toString()
                 val confirmPassword = binding.etConfirmPassword.text.toString()
-                val email = binding.etEmail.text.toString()
+                val email = binding.etPhoneNumber.text.toString()
                 val fullName = binding.etFullName.text.toString()
                 val rdoID = binding.rgPermission.checkedRadioButtonId
                 val checkedRadioButton: RadioButton = findViewById(rdoID)
@@ -53,13 +55,21 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
         }
+
+        binding.tvLoginHere.setOnClickListener {
+            toLogin()
+        }
+    }
+
+    private fun toLogin() {
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
     private fun validate(): Boolean {
         when {
-            TextUtils.isEmpty(binding.etEmail.text) -> {
-                binding.etEmail.error = "Please enter a Email"
-                binding.etEmail.requestFocus()
+            TextUtils.isEmpty(binding.etPhoneNumber.text) -> {
+                binding.etPhoneNumber.error = "Please enter Your Phone Number"
+                binding.etPhoneNumber.requestFocus()
                 return false
             }
             TextUtils.isEmpty(binding.etFullName.text) -> {
