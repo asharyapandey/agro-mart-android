@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.asharya.agromart.R
 import com.asharya.agromart.databinding.ActivityDashboardBinding
-import com.asharya.divinex.api.ServiceBuilder
 
 class DashboardActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDashboardBinding

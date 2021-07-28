@@ -1,4 +1,4 @@
-package com.asharya.divinex.api
+package com.asharya.agromart.api
 
 import com.asharya.agromart.model.User
 import okhttp3.OkHttpClient

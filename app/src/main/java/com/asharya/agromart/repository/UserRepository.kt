@@ -4,7 +4,7 @@ import com.asharya.agromart.api.ApiRequest
 import com.asharya.agromart.api.UserAPI
 import com.asharya.agromart.model.User
 import com.asharya.agromart.response.LoginResponse
-import com.asharya.divinex.api.ServiceBuilder
+import com.asharya.agromart.api.ServiceBuilder
 
 class UserRepository: ApiRequest() {
     private val userApi = ServiceBuilder.buildService(UserAPI::class.java)

@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.asharya.agromart.repository.UserRepository
 import com.asharya.agromart.uitls.InformationType
-import com.asharya.divinex.api.ServiceBuilder
+import com.asharya.agromart.api.ServiceBuilder
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
