@@ -29,8 +29,8 @@ class PostRepository {
     )
 
     suspend fun getProducts() = postApi.getCategories("Bearer ${ServiceBuilder.token!!}")
-    suspend fun upload(image: String) =
-        postApi.upload("Bearer ${ServiceBuilder.token!!}", Upload(image))
+    suspend fun posts(searchTerm: String?) =
+        postApi.posts("Bearer ${ServiceBuilder.token!!}", searchTerm)
 
 
 }

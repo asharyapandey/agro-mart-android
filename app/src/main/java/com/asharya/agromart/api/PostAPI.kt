@@ -4,6 +4,7 @@ import com.asharya.agromart.model.AddPost
 import com.asharya.agromart.model.Upload
 import com.asharya.agromart.response.ProductResponse
 import com.asharya.agromart.response.AddPostResponse
+import com.asharya.agromart.response.PostResponse
 import com.asharya.agromart.response.UploadResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -30,9 +31,9 @@ interface PostAPI {
         @Header("authorization") token: String
     ): Response<ProductResponse>
 
-    @POST("upload")
-    suspend fun upload(
+    @GET("posts")
+    suspend fun posts(
         @Header("authorization") token: String,
-        @Body data: Upload
-    ): Response<UploadResponse>
+        @Query("searchTerm") searchTerm: String?
+    ): Response<PostResponse>
 }

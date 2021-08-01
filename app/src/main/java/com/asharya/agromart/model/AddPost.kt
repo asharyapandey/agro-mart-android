@@ -6,5 +6,7 @@ data class AddPost(
     val farmerPrice: String,
     var image: String,
     val name: String,
-    val product: String
+    val product: String,
+    val _id: String? = null,
+    val _createdAt: String? = null,
 )
