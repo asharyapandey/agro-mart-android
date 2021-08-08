@@ -48,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
                 val permissionLevel = if (checkedRadioButton.text.toString() == "Farmer") 1 else 2
 
                 if (password == confirmPassword) {
-                    viewModel.registerUser(email, password, email, permissionLevel)
+                    viewModel.registerUser(email, password, fullName, permissionLevel)
                 } else {
                     binding.etConfirmPassword.error = "Passwords do not match"
                     binding.etConfirmPassword.requestFocus()

@@ -25,6 +25,7 @@ class LoginViewModel(
                 val response = userRepository.loginUser(phoneNumber, password)
                 if(response.success == true) {
                     ServiceBuilder.token = response.token
+                    ServiceBuilder.userID = response.userID
                     saveSharedPref(phoneNumber, password)
                     _isLoggedIn.value = InformationType(true, response.message!!)
                 }

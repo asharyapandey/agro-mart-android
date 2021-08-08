@@ -36,7 +36,7 @@ class SplashViewModel(
                     if (response.success == true) {
                         // current user details
                         ServiceBuilder.token = response.token
-//                        ServiceBuilder.currentUser = response.user
+                        ServiceBuilder.userID = response.userID
                         // saving to shared pref
                         saveSharedPref(phoneNumber, password)
                         // updating the ui

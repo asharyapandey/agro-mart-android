@@ -19,7 +19,11 @@
         android:id="@+id/homeFragment"
         android:name="com.asharya.agromart.ui.fragments.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_bidFragment"
+            app:destination="@id/bidFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.asharya.agromart.ui.fragments.notification.NotificationFragment"
@@ -30,4 +34,14 @@
         android:name="com.asharya.agromart.ui.fragments.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/bidFragment"
+        android:name="com.asharya.agromart.ui.fragments.bid.BidFragment"
+        android:label="fragment_bid"
+        tools:layout="@layout/fragment_bid" >
+        <argument
+            android:name="postID"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
 </navigation>

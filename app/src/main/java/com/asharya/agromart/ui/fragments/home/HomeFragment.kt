@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.asharya.agromart.R
 import com.asharya.agromart.adapters.PostAdapter
 import com.asharya.agromart.databinding.FragmentHomeBinding
@@ -39,6 +40,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), PostAdapter.PostClickList
     }
 
     override fun bidClicked(post: GetPost, position: Int) {
-        Toast.makeText(context, "Bid Clicked On ${post.productName}", Toast.LENGTH_SHORT).show()
+        val action = HomeFragmentDirections.actionHomeFragmentToBidFragment(post._id)
+        findNavController().navigate(action)
     }
 }

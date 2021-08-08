@@ -11,6 +11,7 @@ object ServiceBuilder {
 //    private const val BASE_URL = "http://192.168.1.66:7000/api/"
 
     var token : String? = null
+    var userID: String? = null
 
     // logger
     private val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
