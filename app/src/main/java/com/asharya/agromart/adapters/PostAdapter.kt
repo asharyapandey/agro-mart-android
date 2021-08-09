@@ -50,6 +50,7 @@ class PostAdapter(val context: Context, val listener: PostClickListener) :
             tvKalimatiPrice.text = "Rs. ${post.kalimatiPrice}/${post.unit}"
             chipCategory.text = post.category
 
+            btnBid.text = "Bid (${post.totalBids})"
 
             btnBid.setOnClickListener {
                 listener.bidClicked(post, position)

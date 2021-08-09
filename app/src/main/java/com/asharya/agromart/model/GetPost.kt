@@ -12,5 +12,6 @@ data class GetPost(
     val name: String,
     val productName: String,
     val unit: String,
-    val user: User
+    val user: User,
+    val totalBids: Int = 0,
 )

@@ -9,4 +9,5 @@ data class BidsResponse(
     val result: List<Bid>? = null,
     val totalCount: Int = 0,
     val maxBid: Int = 0,
+    val isPostBidAccepted: Boolean? = false,
 )

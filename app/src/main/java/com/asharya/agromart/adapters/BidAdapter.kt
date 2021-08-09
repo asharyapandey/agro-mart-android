@@ -46,13 +46,15 @@ class BidAdapter(val context: Context, private val listener: BidClickListener) :
             tvAddress.text = bid.address
             tvRemarks.text = bid.remarks
 
+            // showing accept & reject button when status is PENDING and user is seeing his post
+            // status is shown when other users are seeing it
             tvStatus.text = "Status: ${bid.status}"
-            if(bid.isPostBidAccepted) {
+            if (bid.isPostBidAccepted) {
                 btnAccept.visibility = View.GONE
                 btnReject.visibility = View.GONE
                 tvStatus.visibility = View.VISIBLE
             } else {
-                if (bid.belongsTo?._id == ServiceBuilder.userID) {
+                if (bid.belongsTo?._id == ServiceBuilder.userID && bid.status == "PENDING") {
                     btnAccept.visibility = View.VISIBLE
                     btnReject.visibility = View.VISIBLE
                     tvStatus.visibility = View.GONE
@@ -63,13 +65,13 @@ class BidAdapter(val context: Context, private val listener: BidClickListener) :
                 }
             }
 
+
+            // formatting date
             val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
             val date = LocalDate.parse(bid.createdAt, formatter)
-
-
             tvDateTime.text = date.toString()
 
-
+            // click listeners for button
             btnAccept.setOnClickListener {
                 listener.acceptClick(bid, position)
             }
@@ -77,6 +79,18 @@ class BidAdapter(val context: Context, private val listener: BidClickListener) :
             btnReject.setOnClickListener {
                 listener.rejectClick(bid, position)
             }
+
+            // showing more icon if the bid belongs to that user and post is not accepted
+            // TODO: Add Check to see if the bid is already accepted if so don't let them edit or delete
+            if (bid.userID?._id!! == ServiceBuilder.userID) {
+                ibMore.visibility = View.VISIBLE
+                ibMore.setOnClickListener {
+                    listener.moreClick(bid, it)
+                }
+            } else {
+                ibMore.visibility = View.GONE
+            }
+
 
         }
     }

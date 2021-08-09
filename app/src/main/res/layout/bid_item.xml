@@ -22,9 +22,19 @@
             android:textColor="@color/black"
             android:textSize="21sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ibMore"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_more"
+            app:layout_constraintBottom_toTopOf="@+id/btnReject"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
         <TextView
@@ -78,12 +88,12 @@
 
         <Button
             android:id="@+id/btnReject"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Reject"
             android:textStyle="bold"
-            style="?attr/materialButtonOutlinedStyle"
             app:layout_constraintBaseline_toBaselineOf="@+id/btnAccept"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

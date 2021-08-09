@@ -27,4 +27,27 @@ interface BidAPI {
         @Field("remarks") remarks: String
     ): Response<BidResponse>
 
+    @FormUrlEncoded
+    @PUT("bid/{bidID}")
+    suspend fun editBid(
+        @Header("authorization") token: String,
+        @Path("bidID") bidID: String,
+        @Field("amountOffered") amountOffered: String,
+        @Field("address") address: String,
+        @Field("remarks") remarks: String
+    ): Response<BidResponse>
+
+    @DELETE("bid/{bidID}")
+    suspend fun deleteBid(
+        @Header("authorization") token: String,
+        @Path("bidID") bidID: String,
+    ): Response<BidResponse>
+
+    @FormUrlEncoded
+    @PATCH("bid/status/{bidID}")
+    suspend fun changeBidStatus(
+        @Header("authorization") token: String,
+        @Path("bidID") bidID: String,
+        @Field("status") status: String,
+    ): Response<BidResponse>
 }
