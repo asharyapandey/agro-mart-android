@@ -2,6 +2,7 @@ package com.asharya.agromart.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
@@ -21,6 +22,7 @@ class PostAdapter(val context: Context, val listener: PostClickListener) :
 
     interface PostClickListener {
         fun bidClicked(post: GetPost, position: Int)
+        fun ibMoreClicked(post: GetPost, view: View)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -55,6 +57,15 @@ class PostAdapter(val context: Context, val listener: PostClickListener) :
             btnBid.setOnClickListener {
                 listener.bidClicked(post, position)
             }
+
+            if (post.user._id == ServiceBuilder.userID!!) {
+                ibMore.setOnClickListener {
+                    listener.ibMoreClicked(post, it)
+                }
+            } else {
+                ibMore.visibility = View.GONE
+            }
+
         }
     }
 

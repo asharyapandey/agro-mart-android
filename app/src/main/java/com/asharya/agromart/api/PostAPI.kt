@@ -34,6 +34,7 @@ interface PostAPI {
     @GET("posts")
     suspend fun posts(
         @Header("authorization") token: String,
-        @Query("searchTerm") searchTerm: String?
+        @Query("searchTerm") searchTerm: String?,
+        @Query("userID") userID: String? = null,
     ): Response<PostResponse>
 }

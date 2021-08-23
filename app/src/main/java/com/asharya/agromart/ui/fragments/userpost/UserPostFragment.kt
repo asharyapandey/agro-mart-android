@@ -1,4 +1,4 @@
-package com.asharya.agromart.ui.fragments.home
+package com.asharya.agromart.ui.fragments.userpost
 
 import android.os.Bundle
 import android.view.View
@@ -9,30 +9,27 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.asharya.agromart.R
 import com.asharya.agromart.adapters.PostAdapter
-import com.asharya.agromart.databinding.FragmentHomeBinding
+import com.asharya.agromart.databinding.FragmentUserPostBinding
 import com.asharya.agromart.model.GetPost
 import com.asharya.agromart.repository.PostRepository
 import com.asharya.agromart.uitls.Resource
 
-class HomeFragment : Fragment(R.layout.fragment_home), PostAdapter.PostClickListener {
-    private lateinit var binding: FragmentHomeBinding
-    private lateinit var viewModel: HomeViewModel
+class UserPostFragment : Fragment(R.layout.fragment_user_post), PostAdapter.PostClickListener {
+    private lateinit var binding: FragmentUserPostBinding
+    private lateinit var viewModel: UserPostViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHomeBinding.bind(view)
+        binding = FragmentUserPostBinding.bind(view)
 
-        viewModel = ViewModelProvider(
-            this,
-            HomeViewModelFactory(PostRepository())
-        ).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this, UserPostViewModelFactory(PostRepository())).get(UserPostViewModel::class.java)
 
-        val adapter = PostAdapter(requireContext(), this)
-        binding.postsViewPager.adapter = adapter
+        val adapter = PostAdapter(requireContext(),this )
+        binding.userPostsViewPager.adapter = adapter
         viewModel.getPosts()
 
         viewModel.posts.observe(viewLifecycleOwner) { response ->
-            if (response is Resource.Success) {
+            if(response is Resource.Success) {
                 response.data?.let { data ->
                     adapter.submitList(data.result)
                 }
@@ -43,7 +40,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), PostAdapter.PostClickList
     }
 
     override fun bidClicked(post: GetPost, position: Int) {
-        val action = HomeFragmentDirections.actionHomeFragmentToBidFragment(post._id)
+        val action = UserPostFragmentDirections.actionUserPostFragmentToBidFragment(post._id)
         findNavController().navigate(action)
     }
 
@@ -63,8 +60,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), PostAdapter.PostClickList
     private fun delete(post: GetPost) {
 
     }
-
     private fun editPost(post: GetPost) {
 
     }
+
 }

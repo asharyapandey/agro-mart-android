@@ -31,7 +31,6 @@ class AddPostViewModel(val postRepository: PostRepository) : ViewModel() {
 
     fun addPost(post: AddPost) {
         viewModelScope.launch {
-            _postAdded.postValue(Resource.Loading())
             try {
                 val file = File(post.image)
                 val extension = MimeTypeMap.getFileExtensionFromUrl(post.image)
@@ -77,7 +76,7 @@ class AddPostViewModel(val postRepository: PostRepository) : ViewModel() {
 
     fun getProducts() {
         viewModelScope.launch {
-            _postAdded.postValue(Resource.Loading())
+            _products.postValue(Resource.Loading())
             try {
                 val response = postRepository.getProducts()
                 if (response.isSuccessful) {

@@ -32,5 +32,7 @@ class PostRepository {
     suspend fun posts(searchTerm: String?) =
         postApi.posts("Bearer ${ServiceBuilder.token!!}", searchTerm)
 
+    suspend fun userPosts() =
+        postApi.posts("Bearer ${ServiceBuilder.token!!}", null, ServiceBuilder.userID!!)
 
 }

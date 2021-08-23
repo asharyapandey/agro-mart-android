@@ -11,8 +11,6 @@ import com.asharya.agromart.adapters.PostItemAdapter
 import com.asharya.agromart.databinding.FragmentSearchBinding
 import com.asharya.agromart.model.GetPost
 import com.asharya.agromart.repository.PostRepository
-import com.asharya.agromart.ui.fragments.home.HomeViewModel
-import com.asharya.agromart.ui.fragments.home.HomeViewModelFactory
 import com.asharya.agromart.uitls.Resource
 
 class SearchFragment : Fragment(R.layout.fragment_search), PostItemAdapter.PostItemClickListener {
@@ -40,6 +38,10 @@ class SearchFragment : Fragment(R.layout.fragment_search), PostItemAdapter.PostI
         }
 
         binding.etSearchTearm.addTextChangedListener { text ->
+            if(text.toString() == "") {
+                adapter.submitList(emptyList())
+                return@addTextChangedListener
+            }
             viewModel.getPosts(text.toString())
         }
     }
