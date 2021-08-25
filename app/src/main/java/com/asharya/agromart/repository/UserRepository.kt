@@ -5,8 +5,10 @@ import com.asharya.agromart.api.UserAPI
 import com.asharya.agromart.model.User
 import com.asharya.agromart.response.LoginResponse
 import com.asharya.agromart.api.ServiceBuilder
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 
-class UserRepository: ApiRequest() {
+class UserRepository : ApiRequest() {
     private val userApi = ServiceBuilder.buildService(UserAPI::class.java)
 
     // register user
@@ -22,4 +24,20 @@ class UserRepository: ApiRequest() {
             userApi.loginUser(phoneNumber, password)
         }
     }
+
+    suspend fun changePassword(oldPassword: String, newPassword: String) =
+        userApi.changePassword("Bearer ${ServiceBuilder.token!!}", oldPassword, newPassword)
+
+    suspend fun updateProfile(fullName: String) =
+        userApi.updateProfile("Bearer ${ServiceBuilder.token!!}", fullName)
+
+    suspend fun getProfile() =
+        userApi.getProfile("Bearer ${ServiceBuilder.token!!}")
+
+    suspend fun addProfilePicture(
+        image: MultipartBody.Part,
+    ) = userApi.addProfilePicture(
+        "Bearer ${ServiceBuilder.token!!}",
+        image
+    )
 }

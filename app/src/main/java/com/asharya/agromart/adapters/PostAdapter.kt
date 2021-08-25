@@ -42,6 +42,7 @@ class PostAdapter(val context: Context, val listener: PostClickListener) :
         postImagePath = postImagePath.replace("\\", "/")
         holder.binding.apply {
             Glide.with(context).load(postImagePath).into(ivImage)
+            tvProductName.text = post.productName
             tvAddress.text = "From ${post.address}"
             tvDescription.text = "${post.description}"
             tvUsername.text = "${post.user.fullName}"

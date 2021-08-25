@@ -222,5 +222,4 @@ class BidFragment : Fragment(R.layout.fragment_bid), BidAdapter.BidClickListener
         }
         alertDialog.show()
     }
-
 }

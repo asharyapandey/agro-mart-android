@@ -5,11 +5,13 @@
       <map>
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/add_bid_dialog.xml" value="0.21195652173913043" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/bid_item.xml" value="0.259375" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/change_password_dialog.xml" value="0.2128205128205128" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/edit_profile_dialog.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_bid.xml" value="0.21195652173913043" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_home.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_notification.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_price_list.xml" value="0.28646288209606985" />
-        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_user_post.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/notification_item.xml" value="0.4" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/post_item.xml" value="0.13319672131147542" />
