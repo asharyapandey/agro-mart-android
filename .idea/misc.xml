@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/drawable-anydpi/ic_select_photo.xml" value="0.23846153846153847" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23846153846153847" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/activity_login.xml" value="0.22521367521367522" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/activity_register.xml" value="0.22521367521367522" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/add_bid_dialog.xml" value="0.21195652173913043" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/bid_item.xml" value="0.259375" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/change_password_dialog.xml" value="0.2128205128205128" />
