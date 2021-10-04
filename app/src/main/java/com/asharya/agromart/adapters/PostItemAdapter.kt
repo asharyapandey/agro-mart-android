@@ -43,6 +43,7 @@ class PostItemAdapter(val context: Context, val listener: PostItemClickListener)
             Glide.with(context).load(postImagePath).into(ivPostImage)
             tvAddress.text = "From ${post.address}"
             tvName.text = post.name
+            tvPrice.text = "Rs. ${post.farmerPrice}/ ${post.unit}"
             btnMore.setOnClickListener {
                 listener.btnMoreClicked(post, position)
             }

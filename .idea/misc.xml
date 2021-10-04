@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/drawable-anydpi/ic_select_photo.xml" value="0.23846153846153847" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23846153846153847" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/activity_dashboard.xml" value="0.17335526315789473" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/activity_login.xml" value="0.22521367521367522" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/activity_register.xml" value="0.22521367521367522" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/add_bid_dialog.xml" value="0.21195652173913043" />
@@ -15,13 +16,14 @@
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_home.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_notification.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_price_list.xml" value="0.28646288209606985" />
-        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/fragment_user_post.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/notification_item.xml" value="0.4" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/post_item.xml" value="0.13319672131147542" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/post_layout.xml" value="0.19330601092896174" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/layout/price_item.xml" value="0.2" />
         <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/menu/edit_delete.xml" value="0.19453125" />
+        <entry key="..\:/Users/ashra/Android/agromart/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1256578947368421" />
       </map>
     </option>
   </component>
